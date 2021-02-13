@@ -1,53 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蓝策洞察</title>
-  <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="utf-8">
+  <title>蓝策－新闻公告</title>
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0, maximum-scale=2, user-scalable=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="Keywords" content="蓝策，蓝策ValueLink，蓝策咨询，蓝策评估，蓝策交易，蓝策财务，蓝策动态，蓝策快讯，蓝策研究">
+  <meta name="description" content="valuelink.cn，蓝策ValueLink，蓝策咨询，蓝策评估，蓝策交易，评估行业新闻，交易行业新闻，财务行业新闻，企业上市新闻，融资新闻">
+  <!-- <link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+  <link href="static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+  <link href="static/css/swiper.min.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet" />
 </head>
 
-<body class='news'>
-  <!-- 头部 -->
-  <div class='header'>
-    <div class='content clearfix'>
-      <!-- 头部logo -->
-      <div class='logo-box'>
-        <img src="static/picture/logo.png" alt="图裂了">
+<body class="news" style="background-color: #f0f0f0;">
+  <div class="header">
+    <div class="content clearfix">
+      <div class="logo-box">
+        <img src="static/picture/logo.png">
       </div>
-      <!-- 头部右侧：搜索框+导航栏menu -->
-      <div class='header-right'>
-        <!-- 搜索框 -->
+      <div class="header-right">
         <div class="seach-box clearfix">
-          <div class='seach'>
-            <form name='frmSearch' action="/search.html" method="get">
-              <input name='kw' id='kw' type="text" />
-              <span class='home_icon_search' onclick="document.forms['frmSearch'].submit()"></span>
+          <div class="seach">
+            <form name="frmSearch" action="/search.html" method="get">
+              <input type="text" id="kw" name="kw" />
+              <span class="home_icon_search" onclick="document.forms['frmSearch'].submit()"></span>
             </form>
           </div>
         </div>
-        <!-- 菜单 -->
-        <div class='menu-box clearfix' id='menu_item'>
-          <a class='lan-en' data-lan='en' data-href='/en/index.html'>EN</a>
+        <div class="menu-box clearfix" id="menu_item">
+          <a data-href="/en/news.html" data-lan="en" class="lan-en">EN</a>
           <ul class="menu-item clearfix">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于蓝策</a></li>
-            <li><a href="service.html">专业服务</a></li>
-            <li><a href="successful.html">成功案例</a></li>
-            <li><a href="team.html">专业团队</a></li>
-            <li><a href="contact.html">联系蓝策</a></li>
-            <li><a href="job.html">工作机会</a></li>
-            <li class="active"><a href="news.html">蓝策洞察</a></li>
+            <li>
+              <a href="index.html">首页</a>
+            </li>
+            <li>
+              <a href="about.html">关于蓝策</a>
+            </li>
+            <li>
+              <a href="service.html">专业服务</a>
+            </li>
+            <li>
+              <a href="successful.html">成功案例</a>
+            </li>
+            <li>
+              <a href="team.html">专业团队</a>
+            </li>
+            <li>
+              <a href="contact.html">联系蓝策</a>
+            </li>
+            <li>
+              <a href="job.html">工作机会</a>
+            </li>
+            <li class="active">
+              <a href="news.html">蓝策洞察</a>
+            </li>
           </ul>
-          <div id='menu_line'></div>
+          <div id="menu_line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-box lc-news-container">
+    <div class="banner">
+      <img class="page3_pic1" src="static/picture/banner.jpg" />
+    </div>
+    <div class="container">
+      <div class="time_container">
+        <form name="formSearch" action="news_search.html" method="get">
+          <div class="time_box">
+            <div class="time_input_box">
+              <input type="text" value="" name="bdate" data-date-format="yyyy-mm-dd" class="form_date">
+            </div>
+            <em class="time_line"></em>
+            <div class="time_input_box">
+              <input type="text" value="" name="edate" data-date-format="yyyy-mm-dd" class="form_date">
+            </div>
+            <span class="icon_search" onclick="document.forms['formSearch'].submit()"></span>
+          </div>
+        </form>
+      </div>
+      <ul class="news_list_title clearfix">
+        <li class="current news_list_title_a">蓝策研究</li>
+        <li>蓝策分享</li>
+        <li class="news_list_title_c">蓝策动态</li>
+      </ul>
+      <div class="news_content ">
+        <!-- <div class="tab-content active">
+                    <ul class="news_news clearfix">
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="news_btn_box clearfix">
+                        <a href="" class="btn_left"></a>
+                        <a href="" class="btn_right"></a>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <ul class="news_news clearfix">
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="news_btn_box clearfix">
+                        <a href=""><</a>
+                        <a href="">></a>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <ul class="news_news clearfix">
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic1.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic2.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic3.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="news-item-head">
+                                <img src="static/picture/pic4.jpg" class="news_newsPic1"/>
+                                <h3><a href="detail.html">蓝策观点 | 资产评估专题连载：重大资产重组与资产评估（一）</a></h3>
+                            </div>
+                            <div class="news-item-bottom">
+                                <p class="time">2016年04月13日</p>
+                                <a href="detail.html" class="more">查看更多</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="news_btn_box clearfix">
+                        <a href="">&gt;</a>
+                        <a href="">&lt;</a>
+                    </div>
+                </div> -->
+      </div>
+    </div>
+    <div class="footer about-footer">
+      <div class="footer-ym">
+        <a href="privacy_clause.html">隐私保护</a>
+        <span>|</span>
+        <a href="exemption_clause.html">免责条款</a>
+      </div>
+      <div class="footer_logo">
+        <p><img src="static/picture/bottom_text.gif" alt=""></p>
+      </div>
+      <div class="footer-conp">
+        版权所有@2020 "蓝策"、"ValueLink"、“亚洲评估” 及其标识归蓝策管理咨询（北京）有限公司拥有。
+        <div>
+          <a style="color:#939393" href="http://www.beian.miit.gov.cn" target="_blank">京ICP备17006781号-1</a>
+          <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502032540"
+            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;position: relative;top: 5px;"><img
+              src="static/picture/mg_ico.png" style="float:left;" />
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备
+              11010502032540号</p>
+          </a>
         </div>
       </div>
     </div>
   </div>
   <script src="static/js/jquery.min.js"></script>
+
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="static/js/bootstrap-datetimepicker.zh-cn.js" charset="UTF-8"></script>
+
+
   <script src="static/js/lc-app.js"></script>
+  <script type="text/javascript">
+    function getMoreNews(e, page, cate) {
+      $(e).closest('.tab-content').load('/api/front/newsitems?p=' + page + '&c=' + cate + '&w=' + window.innerWidth);
+    }
+    function getCookie(na) {
+      var arr, reg = new RegExp("(^| )" + na + "=([^;]*)(;|$)");
+      if (arr = document.cookie.match(reg))
+        return arr[2];
+      else
+        return null;
+    }
+    $(function () {
+      $('.form_date').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+      });
+      mobs = getCookie("mobile");
+
+      var wh = $(window).width();
+      // if(wh<1024){
+      //$('.news_content').load('/api/front/news?m=1', {w: window.innerWidth});
+      // window.location.href="/mob/news.html";
+      // }else {
+      $('.news_content').load('/api/front/news', { w: window.innerWidth }, function () {
+        $('.news_list_title li').eq(1).trigger('click')
+      });
+      // setTimeout(function(){
+      //     $('.news_list_title li').eq(1).trigger('click')
+      // },100)
+
+      // }
+    });
+  </script>
   <script type="text/javascript" src="static/js/menu_scroll.js"></script>
+  <script src="static/js/lc-app.js"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>

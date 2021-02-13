@@ -1,55 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>工作机会</title>
-  <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="utf-8">
+  <title>蓝策－蓝策招聘</title>
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0, maximum-scale=2, user-scalable=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="Keywords" content="蓝策，蓝策ValueLink，蓝策咨询，蓝策评估，蓝策交易，蓝策财务蓝策招聘，金融和评估领域招聘机会">
+  <meta name="description" content="valuelink.cn，蓝策ValueLink，蓝策咨询，蓝策评估，蓝策交易，蓝策财务蓝策招聘，金融和评估领域招聘">
+  <link href="static/css/style.css" rel="stylesheet" />
+  <style type="text/css">
+    .container-fluid {
+      margin: 0 30px;
+    }
+
+    .box {
+      float: left;
+      width: 33.33%;
+    }
+
+    .box_body {
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+      margin: 10px;
+      padding: 16px;
+      border-radius: 5px;
+
+    }
+
+    .box img {
+      max-width: 100%
+    }
+  </style>
 </head>
 
-<body class='job'>
-  <!-- 头部 -->
-  <div class='header'>
-    <div class='content clearfix'>
-      <!-- 头部logo -->
-      <div class='logo-box'>
-        <img src="static/picture/logo.png" alt="图裂了">
+<body class="job">
+  <div class="header">
+    <div class="content clearfix">
+      <div class="logo-box">
+        <img src="static/picture/logo.png">
       </div>
-      <!-- 头部右侧：搜索框+导航栏menu -->
-      <div class='header-right'>
-        <!-- 搜索框 -->
+      <div class="header-right">
         <div class="seach-box clearfix">
-          <div class='seach'>
-            <form name='frmSearch' action="/search.html" method="get">
-              <input name='kw' id='kw' type="text" />
-              <span class='home_icon_search' onclick="document.forms['frmSearch'].submit()"></span>
+          <div class="seach">
+            <form name="frmSearch" action="/search.html" method="get">
+              <input type="text" id="kw" name="kw" />
+              <span class="home_icon_search" onclick="document.forms['frmSearch'].submit()"></span>
             </form>
           </div>
         </div>
-        <!-- 菜单 -->
-        <div class='menu-box clearfix' id='menu_item'>
-          <a class='lan-en' data-lan='en' data-href='/en/index.html'>EN</a>
+        <div class="menu-box clearfix" id="menu_item">
+          <a data-href="/en/job.html" data-lan="en" class="lan-en">EN</a>
           <ul class="menu-item clearfix">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于蓝策</a></li>
-            <li><a href="service.html">专业服务</a></li>
-            <li><a href="successful.html">成功案例</a></li>
-            <li><a href="team.html">专业团队</a></li>
-            <li><a href="contact.html">联系蓝策</a></li>
-            <li class="active"><a href="job.html">工作机会</a></li>
-            <li><a href="news.html">蓝策洞察</a></li>
+            <li>
+              <a href="index.html">首页</a>
+            </li>
+            <li>
+              <a href="about.html">关于蓝策</a>
+            </li>
+            <li>
+              <a href="service.html">专业服务</a>
+            </li>
+            <li>
+              <a href="successful.html">成功案例</a>
+            </li>
+            <li>
+              <a href="team.html">专业团队</a>
+            </li>
+            <li>
+              <a href="contact.html">联系蓝策</a>
+            </li>
+            <li class="active">
+              <a href="job.html">工作机会</a>
+            </li>
+            <li>
+              <a href="news.html">蓝策洞察</a>
+            </li>
           </ul>
-          <div id='menu_line'></div>
+          <div id="menu_line"></div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="container-box">
+    <div class="banner">
+      <img src="static/picture/img_01.jpg">
+    </div>
+    <div class="container">
+      <div class="job_top_box" style="padding-bottom:40px;">
+        <h1>加入蓝策</h1>
+        <p class="job_top_text">我们提供在公司金融和评估领域的工作机会，收入和福利将与您的资历和经验相匹配。请仔细阅读我们的空缺职位，如果您对为我们工作感兴趣，请将个人简历发至hr1@valuelink.cn
+          ，或邮递至以下地址：北京朝阳区，朝阳门外大街1号，京广中心商务楼1201室（邮编：100020）
+        </p>
+      </div>
+      <div class="lc-job-body" style="padding-bottom:0;">
+        <h4>职位空缺</h4>
+      </div>
+      <div id="masonry" class="container-fluid job-item">
+        <div class="box">
+          <div class="box_body">
+            <h5>评估助理 | 咨询部 | 蓝策评估</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：市场信息调研、分析、书写报告</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>本科或以上学历，主修金融、金融工程或会计专业</li>
+              <li>持有CFA、ASA、CPA、FRM、CPV或MBA者优先考虑</li>
+              <li>至少两年金融分析或企业财务工作经历</li>
+              <li>擅长调研、现金流分析、金融建模以及财务分析</li>
+              <li>有四大会计事务所工作经验者优先考虑</li>
+              <li>优异的沟通能力</li>
+              <li>有团队精神，适应压力能力强</li>
+              <li>中英文听说读写流利</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>项目经理 | 法定部 | 蓝策评估</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：项目管理、项目风险识别及控制、评估分析</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>大学本科以上，主修资产评估、会计、机械设备、建筑工程、金融或金融工 程,并有 3-4 年以上的资产评估工作经验;</li>
+              <li>具有 CPV 执业资格;</li>
+              <li>熟悉评估相关法规政策及评估准则,能处理和把握复杂的专业问题;</li>
+              <li>能熟练使用word、excel等办公软件；</li>
+              <li>身体健康,能适应出差,承受一定工作强度及压力;</li>
+              <li>有负责过大型、特大型资产评估项目经历者优先;</li>
+              <li>有 CPA、CFA、ASA、FRM 者优先考虑。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>高级项目经理 | 物业部 | 蓝策评估</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：现场勘查、市场信息搜集、调研、分析、编写评估模型、撰写评估报告，独立完成房地产评估项目</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>本科或以上学历，主修土地、房地产、房地产金融或相关专业;</li>
+              <li>持有房地产估价师,、土地估价师、RICS者优先考虑;</li>
+              <li>至少三年房地产评估行业工作经历;</li>
+              <li>参与过房地产市场研究工作;</li>
+              <li>有五大行或国内一级资质房地产评估公司工作经验者优先考虑;</li>
+              <li>优异的沟通能力;</li>
+              <li>有团队精神，适应压力能力强;</li>
+              <li>具有英文听说读写能力者优先考虑;</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>投资分析师/助理分析师｜蓝策交易</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：协助合伙人或总监对项目公司的业务进行梳理，对行业数据、交易数据等进行搜集与分析。</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>金融、会计、财务、统计、计算机、电子工程等相关专业的本科及研究生在校生（大三以上）或者应届毕业生</li>
+              <li>具备较好的数据搜集、整理与分析能力</li>
+              <li>有投资、投行、咨询或四大会计师事务所实习经验优先</li>
+              <li>细致负责的工作态度，以及积极进取的学习精神</li>
+              <li>英文听说读写流利，能熟练使用PPT, EXCEL, WORD等各类办公软件</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>投资经理/副总裁｜蓝策交易</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：领导或协助完成项目的尽职调查，协助项目公司完成商业计划书、财务模型等资料，对公司估值进行分析，执行复杂的私募融资、并购重组、及投资等交易。</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>本科或以上学历，主修金融、会计、财务、统计、计算机、电子工程等相关专业</li>
+              <li>有CPA/CFA或MBA者优先考虑</li>
+              <li>2~5年工作经验，投资、投行、咨询、四大会计师事务所工作经验优先</li>
+              <li>优异的逻辑思维与分析能力</li>
+              <li>较好的会计基础与专业知识为佳</li>
+              <li>良好的团队协作精神和沟通能力，诚实可靠、追求卓越，具备较高的自我驱动力</li>
+              <li>英文听说读写流利，能熟练使用PPT, EXCEL, WORD等各类办公软件。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>行政专员｜蓝策集团</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：行政、人力资源、公司账务管理</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>本科或以上学历，主修金融、经济、管理或会计专业</li>
+              <li>至少两年从事行政或会计工作经历</li>
+              <li>有会计上岗证</li>
+              <li>优异的沟通能力</li>
+              <li>有团队精神，适应压力能力强</li>
+              <li>中英文听说读写流利</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>业务助理｜蓝策集团</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>工作内容：业务拓展与市场助理</p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>本科或以上学历，主修金融、金融工程或会计专业</li>
+              <li>至少两年金融分析或企业财务工作经历</li>
+              <li>优异的沟通能力</li>
+              <li>有团队精神，适应压力能力强</li>
+              <li>中英文听说读写流利</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box_body">
+            <h5>项目经理｜精算部门</h5>
+            <div class="lc-job-con">
+              <p>地点：北京，上海</p>
+              <p>
+                工作内容：与客户和客户经理保持密切沟通，明确项目要求，提供专业建议和解决办法、汇编和核实来自客户的数据，为各级精算分析准备数据、参与传统的精算项目，如估价、定价、财务报告、IFRS9和USGAAP报告、金融建模工作包括估值、EV、ALM、MCEV、定价等、根据需要准备分析报告或其他文件、在会议和研讨会上向客户提供演示文稿
+              </p>
+            </div>
+            <ul class="lc-job-list clearfix">
+              <li>大学本科以上学历</li>
+              <li>至少5年以上保险公司或精算咨询公司工作经验</li>
+              <li>熟练使用至少一种精算软件</li>
+              <li>擅长精算专业考试，ASA优先考虑</li>
+              <li>有较强的沟通和人际交往能力，有团队管理经验者优先</li>
+              <li>流利的英语口语</li>
+              <li>良好的解决问题和决策能力</li>
+              <li>良好的组织能力和团队合作精神</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <ul class="job-item clearfix">
+                    <li>
+                        <h5>评估助理 | 咨询部 | 蓝策评估</h5>
+                        <p class="lc-job-con">工作内容：市场信息调研、分析、书写报告</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>本科或以上学历，主修金融、金融工程或会计专业</li>
+                            <li>持有CFA,、ASA、CPA、FRM、CPV或MBA者优先考虑</li>
+                            <li>至少两年金融分析或企业财务工作经历</li>
+                            <li>擅长调研、现金流分析、金融建模以及财务分析</li>
+                            <li>有四大会计事务所工作经验者优先考虑</li>
+                            <li>优异的沟通能力</li>
+                            <li>有团队精神，适应压力能力强</li>
+                            <li>中英文听说读写流利</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>项目经理 | 法定部 | 蓝策评估</h5>
+                        <p class="lc-job-con">工作内容：项目管理、项目风险识别及控制、评估分析</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>大学本科以上，主修资产评估、会计、机械设备、建筑工程、金融或金融工 程,并有 3-4 年以上的资产评估工作经验;</li>
+                            <li>具有 CPV 执业资格;</li>
+                            <li>熟悉评估相关法规政策及评估准则,能处理和把握复杂的专业问题;</li>
+                            <li>能熟练使用word、excel等办公软件；</li>
+                            <li>身体健康,能适应出差,承受一定工作强度及压力;</li>
+                            <li>有负责过大型、特大型资产评估项目经历者优先;</li>
+                            <li>有 CPA,CFA、ASA、FRM 者优先考虑。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>高级项目经理 | 物业部 | 蓝策评估</h5>
+                        <p class="lc-job-con">工作内容：现场勘查、市场信息搜集、调研、分析、编写评估模型、撰写评估报告，独立完成房地产评估项目</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>本科或以上学历，主修土地、房地产、房地产金融或相关专业;</li>
+                            <li>持有房地产估价师,、土地估价师、RICS者优先考虑;</li>
+                            <li>至少三年房地产评估行业工作经历;</li>
+                            <li>参与过房地产市场研究工作;</li>
+                            <li>有五大行或国内一级资质房地产评估公司工作经验者优先考虑;</li>
+                            <li>优异的沟通能力;</li>
+                            <li>有团队精神，适应压力能力强;</li>
+                            <li>具有英文听说读写能力者优先考虑;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>行政专员｜蓝策集团</h5>
+                        <p class="lc-job-con">工作内容：行政、人力资源、公司账务管理</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>本科或以上学历，主修金融、经济、管理或会计专业</li>
+                            <li>至少两年从事行政或会计工作经历</li>
+                            <li>有会计上岗证</li>
+                            <li>优异的沟通能力</li>
+                            <li>有团队精神，适应压力能力强</li>
+                            <li>中英文听说读写流利</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>业务助理｜蓝策集团</h5>
+                        <p class="lc-job-con">工作内容：业务拓展与市场助理</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>本科或以上学历，主修金融、金融工程或会计专业</li>
+                            <li>至少两年金融分析或企业财务工作经历</li>
+                            <li>优异的沟通能力</li>
+                            <li>有团队精神，适应压力能力强</li>
+                            <li>中英文听说读写流利</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>投资分析师/助理分析师</h5>
+                        <p class="lc-job-con">部门：交易服务</p>
+                        <p class="lc-job-con">地点：北京，上海</p>
+                        <p class="lc-job-con">工作内容：协助合伙人或总监对项目公司的业务进行梳理，对行业数据、交易数据等进行搜集与分析。</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>金融、会计、财务、统计、计算机、电子工程等相关专业的本科及研究生在校生（大三以上）或者应届毕业生</li>
+                            <li>具备较好的数据搜集、整理与分析能力</li>
+                            <li>有投资、投行、咨询或四大会计师事务所实习经验优先</li>
+                            <li>细致负责的工作态度，以及积极进取的学习精神</li>
+                            <li>英文听说读写流利，能熟练使用PPT, EXCEL, WORD等各类办公软件</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>投资经理/副总裁</h5>
+                        <div class="lc-job-con">
+                            <p>部门：交易服务</p>
+                            <p>地点：北京，上海</p>
+                        </div>
+
+                        <p class="lc-job-con">工作内容：领导或协助完成项目的尽职调查，协助项目公司完成商业计划书、财务模型等资料，对公司估值进行分析，执行复杂的私募融资、并购重组、及投资等交易。</p>
+                        <ul class="lc-job-list clearfix">
+                            <li>本科或以上学历，主修金融、会计、财务、统计、计算机、电子工程等相关专业</li>
+                            <li>有CPA/CFA或MBA者优先考虑</li>
+                            <li>2~5年工作经验，投资、投行、咨询、四大会计师事务所工作经验优先</li>
+                            <li>优异的逻辑思维与分析能力</li>
+                            <li>较好的会计基础与专业知识为佳</li>
+                            <li>良好的团队协作精神和沟通能力，诚实可靠、追求卓越，具备较高的自我驱动力</li>
+                            <li>英文听说读写流利，能熟练使用PPT, EXCEL, WORD等各类办公软件。</li>
+                        </ul>
+                    </li>
+                </ul> -->
+    </div>
+  </div>
+  <div class="footer about-footer">
+    <div class="footer-ym">
+      <a href="privacy_clause.html">隐私保护</a>
+      <span>|</span>
+      <a href="exemption_clause.html">免责条款</a>
+    </div>
+    <div class="footer_logo">
+      <p><img src="static/picture/bottom_text.gif" alt=""></p>
+    </div>
+    <div class="footer-conp">
+      版权所有@2020 "蓝策"、"ValueLink"、“亚洲评估” 及其标识归蓝策管理咨询（北京）有限公司拥有。
+      <div>
+        <a style="color:#939393" href="http://www.beian.miit.gov.cn" target="_blank">京ICP备17006781号-1</a>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502032540"
+          style="display:inline-block;text-decoration:none;height:20px;line-height:20px;position: relative;top: 5px;"><img
+            src="static/picture/mg_ico.png" style="float:left;" />
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备
+            11010502032540号</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
   <script type="text/javascript" src="static/js/menu_scroll.js"></script>
   <script src="static/js/jquery.min.js"></script>
   <script src="static/js/masonry-docs.min.js"></script>
   <script src="static/js/lc-app.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var $container = $('#masonry');
+      $container.imagesLoaded(function () {
+        $container.masonry({
+          itemSelector: '.box',
+          gutter: 0,
+          isAnimated: true,
+        });
+      });
+    });
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?fb4869554b0101c9eeb822a57a78d4e0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </body>
 
 </html>

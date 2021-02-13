@@ -13,6 +13,37 @@
       position: relative;
       height: 100%;
     }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .swiper-slide {
+      background: #fff;
+      cursor: -webkit-grab;
+      display: -ms-flexbox;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .dc-more {
+      float: right;
+      margin: 10px 3.8% 0 0;
+      font-size: 14px;
+    }
+
+    .body-con-item li {
+      width: 50%;
+    }
   </style>
 </head>
 
@@ -53,10 +84,94 @@
       </div>
     </div>
   </div>
+  <!-- 轮播图部分 -->
+  <div class='' style='margin-top: 100px;'>
+    <div class="easing" id='fullpage'>
+      <div class='section' data-anchor="page1">
+        <div class='one_content'>
+          <div class="slide_box">
+            <div class='swiper-container'>
+              <div class=swiper-wrapper>
+                <div class="swiper-slide"><img src="static/picture/index_01.jpg" alt="图裂了"></div>
+                <div class="swiper-slide"><img src="static/picture/index_02.jpg" alt="图裂了"></div>
+                <div class="swiper-slide"><img src="static/picture/index_03.jpg" alt="图裂了"></div>
+                <div class="swiper-slide"><img src="static/picture/index_04.jpg" alt="图裂了"></div>
+                <div class="swiper-slide"><img src="static/picture/index_05.jpg" alt="图裂了"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='section' data-anchor="page2">
+        <div class='body-news js_anima' rel='-1500,0,0'>
+          <div class='container'>
+            <h2 class="='tit-news">
+              蓝策洞察
+              <a class='dc-more' href="news.html">查看更多>></a>
+            </h2>
+            <ul class='news-item clearfix'></ul>
+          </div>
+          <div class="body-con">
+            <div class="body-con-header">
+              <span class="body-con-header-span"><img src="static/picture/footer_logo.png"></span>
+            </div>
+            <ul class="body-con-item clearfix">
+              <li>
+                <h2><img src="static/picture/footer_01.jpg"></h2>
+                <a href="https://www.valuelink.cn/down/?id=15&pid=1" class="h-btn-d">获取评估手册</a>
+              </li>
+              <li>
+                <h2><img src="static/picture/footer_04.jpg"></h2>
+                <a href="https://www.valuelink.cn/down/?id=20&pid=1" class="h-btn-d">获取精算手册</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 底部 -->
+  <div class="footer about-footer">
+    <div class="footer-ym">
+      <a href="javascript:void();">隐私保护</a>
+      <span>|</span>
+      <a href="javascript:void();">免责条款</a>
+    </div>
+    <div class="footer_logo">
+      <p><img src="static/picture/bottom_text.gif" alt=""></p>
+    </div>
+    <div class="footer-conp">
+      版权所有@2020 "蓝策"、"ValueLink"、“亚洲评估” 及其标识归蓝策管理咨询（北京）有限公司拥有。
+      <div>
+        <a style="color:#939393" href="https://beian.miit.gov.cn/" target="_blank">京ICP备17006781号-1</a>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502032540"
+          style="display:inline-block;text-decoration:none;height:20px;line-height:20px;position: relative;top: 5px;"><img
+            src="static/picture/mg_ico.png" style="float:left;" />
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备
+            11010502032540号</p>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="static/js/jquery.min.js"></script>
   <script src="static/js/jquery-ui-1.10.3.min.js"></script>
   <script type="text/javascript" src="static/js/jquery.slimscroll.min.js"></script>
   <script type="text/javascript" src="static/js/jquery.fullpage.min.js"></script>
+  <script type="text/javascript" src="static/js/swiper.jquery.min.js"></script>
+  <script>
+    var ww = $(window).width(),
+      wh = $(window).height();
+
+    var swiper = new Swiper('.swiper-container', {
+      // pagination: '.swiper-pagination',
+      loop: true,
+      autoplay: 6000,
+      effect: 'fade',
+      paginationClickable: true
+    });
+
+  </script>
   <script type="text/javascript" src="static/js/menu_scroll.js"></script>
   <script type="text/javascript" src="static/js/lc-app.js"></script>
 </body>
